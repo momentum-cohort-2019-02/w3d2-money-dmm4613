@@ -28,6 +28,12 @@ def test_create_dinar():
     assert dinar.symbol is None
     assert dinar.digits == 3
 
+def test_return_code():
+    dollar = Currency("United States dollar", "USD", "$")
+    peso = Currency ("Mexican peso", "MXN")
+    assert str(dollar) == "(USD, $)"
+    assert str(peso) == "MXN"
+
 
 def test_currency_equality():
     assert USD == Currency("United States dollar", "USD", "$")
